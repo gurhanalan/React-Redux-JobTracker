@@ -8,6 +8,7 @@ import {
 
 const initialState = {
   isLoading: false,
+  isSidebarOpen: false,
   user: getUserFromLocalStorage(),
 };
 
@@ -68,6 +69,12 @@ const userSlice = createSlice({
       toast.error(payload);
     },
   },
+  reducers: {
+    toggleSidebar: (state) => {
+      state.isSidebarOpen = !state.isSidebarOpen;
+    },
+  },
 });
 
+export const { toggleSidebar } = userSlice.actions;
 export default userSlice.reducer;
