@@ -56,6 +56,15 @@ const allJobsSlice = createSlice({
       toast.error(payload);
     },
   },
+  reducers: {
+    showLoading: (state) => {
+      state.isLoading = true;
+    },
+    hideLoading: (state) => {
+      state.isLoading = false;
+    },
+  },
 });
 
 export default allJobsSlice.reducer;
+export const { showLoading, hideLoading } = allJobsSlice.actions;
